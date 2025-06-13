@@ -81,21 +81,21 @@ Install via your preferred package manager:
 
 ```bash
 # Homebrew (macOS/Linux)
-brew install your-username/tap/gh-memory-bank
+brew install drewpayment/tap/gh-memory-bank
 
 # Chocolatey (Windows)
 choco install gh-memory-bank
 
 # Direct download from GitHub Releases
 # Download the appropriate binary for your platform from:
-# https://github.com/your-username/gh-memory-bank/releases
+# https://github.com/drewpayment/gh-memory-bank/releases
 ```
 
 ### Manual Installation
 
 ```bash
 # Install directly with Go
-go install github.com/your-username/gh-memory-bank@latest
+go install github.com/drewpayment/gh-memory-bank@latest
 ```
 
 ## Usage
@@ -128,11 +128,11 @@ Huge thanks to [AI Jason](https://www.youtube.com/@AIJasonZ) for the excellent v
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/gh-memory-bank.git
+git clone https://github.com/drewpayment/gh-memory-bank.git
 cd gh-memory-bank
 
 # Initialize Go module (if not already done)
-go mod init github.com/your-username/gh-memory-bank
+go mod init github.com/drewpayment/gh-memory-bank
 
 # Install dependencies (if any are added later)
 go mod tidy
