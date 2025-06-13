@@ -1,5 +1,6 @@
 # GitHub Memory Bank
 
+[![Build Status](https://github.com/drewpayment/gh-memory-bank/actions/workflows/release.yml/badge.svg)](https://github.com/drewpayment/gh-memory-bank/actions/workflows/release.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This repository contains a CLI tool to help users implement a memory bank system for use with AI agents like GitHub Copilot. The system is designed to maintain context across sessions using specialized modes that handle different phases of the development process.
