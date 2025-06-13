@@ -1,0 +1,103 @@
+version: 2
+
+# Project configuration
+project_name: gh-memory-bank
+
+# Build configuration
+builds:
+  - id: gh-memory-bank
+    binary: gh-memory-bank
+    main: .
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - windows
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    # Windows ARM64 support is limited
+    ignore:
+      - goos: windows
+        goarch: arm64
+    ldflags:
+      - -s -w
+      - -X main.version={{.Version}}
+      - -X main.commit={{.Commit}}
+      - -X main.date={{.Date}}
+
+# Archive configuration (modern v2 format)
+archives:
+  - id: default
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    files:
+      - LICENSE
+      - README.md
+
+# Checksum configuration
+checksum:
+  name_template: "checksums.txt"
+
+# Snapshot configuration (for testing)
+snapshot:
+  version_template: "{{ incpatch .Version }}-next"
+
+# Changelog configuration
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+      - "^ci:"
+      - "^chore:"
+      - merge conflict
+      - Merge pull request
+
+# GitHub Release configuration
+release:
+  draft: false
+  prerelease: auto
+  mode: replace
+  header: |
+    ## GitHub Memory Bank {{ .Tag }}
+    
+    Install GitHub Copilot Memory Bank templates easily with this CLI tool.
+    
+    ### Installation
+    
+    **Homebrew:**
+    ```bash
+    brew install drewpayment/tap/gh-memory-bank
+    ```
+    
+    **Direct Download:**
+    Download the appropriate binary for your platform below.
+    
+    **Go Install:**
+    ```bash
+    go install github.com/drewpayment/gh-memory-bank@{{ .Tag }}
+    ```
+  footer: |
+    **Full Changelog**: https://github.com/drewpayment/gh-memory-bank/compare/{{ .PreviousTag }}...{{ .Tag }}
+
+# Homebrew Cask (new required format for CLI tools)
+homebrew_casks:
+  - name: gh-memory-bank
+    repository:
+      owner: drewpayment
+      name: homebrew-tap
+    directory: Casks
+    description: "CLI tool to install GitHub Copilot Memory Bank templates"
+    homepage: https://github.com/drewpayment/gh-memory-bank
+    commit_author:
+      name: goreleaserbot
+      email: bot@goreleaser.com
+    commit_msg_template: "Brew cask update for {{ .ProjectName }} version {{ .Tag }}"
+    # For CLI tools, we specify the binary name
+    binary: gh-memory-bank
+
+# Universal macOS binaries
+universal_binaries:
+  - replace: true

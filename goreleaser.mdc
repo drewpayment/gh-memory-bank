@@ -1,0 +1,11 @@
+# GoReleaser Developer Tasks
+
+### Check GoReleaser configuration
+```bash
+goreleaser check
+```
+
+### Test the build 
+```bash
+goreleaser build --snapshot --clean
+```

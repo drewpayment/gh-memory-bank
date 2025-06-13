@@ -10,6 +10,13 @@ import (
 	"strings"
 )
 
+// Version information (set by GoReleaser)
+var (
+	version = "dev"
+	commit  = "none"
+	date    = "unknown"
+)
+
 // Embed all files from the templates directory
 //
 //go:embed templates/*
@@ -17,7 +24,7 @@ var templateFiles embed.FS
 
 func main() {
 	if len(os.Args) < 2 {
-		fmt.Println("Usage: gh-memory-bank install")
+		fmt.Println("Usage: gh-memory-bank [install|version]")
 		os.Exit(1)
 	}
 
@@ -28,9 +35,36 @@ func main() {
 			os.Exit(1)
 		}
 		fmt.Println("Successfully installed GitHub Copilot memory bank templates!")
+	case "version", "--version", "-v":
+		fmt.Printf("gh-memory-bank %s\n", version)
+		fmt.Printf("commit: %s\n", commit)
+		fmt.Printf("built at: %s\n", date)
+	case "help", "--help", "-h":
+		showHelp()
 	default:
-		fmt.Println("Unknown command. Use: gh-memory-bank install")
+		fmt.Printf("Unknown command: %s\n", os.Args[1])
+		fmt.Println("Use: gh-memory-bank [install|version|help]")
+		os.Exit(1)
 	}
+}
+
+func showHelp() {
+	fmt.Println(`GitHub Memory Bank CLI Tool
+
+USAGE:
+    gh-memory-bank <command>
+
+COMMANDS:
+    install     Install GitHub Copilot Memory Bank templates
+    version     Show version information
+    help        Show this help message
+
+EXAMPLES:
+    gh-memory-bank install          # Install templates to current directory
+    gh-memory-bank version          # Show version info
+    gh-memory-bank help             # Show help
+
+For more information, visit: https://github.com/drewpayment/gh-memory-bank`)
 }
 
 func installFiles() error {
