@@ -1,8 +1,5 @@
 # GitHub Memory Bank
 
-[![Build Status](https://github.com/drewpayment/gh-memory-bank/actions/workflows/release.yml/badge.svg)](https://github.com/drewpayment/gh-memory-bank/actions/workflows/release.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 This repository contains a CLI tool to help users implement a memory bank system for use with AI agents like GitHub Copilot. The system is designed to maintain context across sessions using specialized modes that handle different phases of the development process.
 
 ## Overview
@@ -35,6 +32,45 @@ The system is intended to be used with GitHub Copilot Chat's custom modes. The u
 5.  **Implementation (IMPLEMENT Mode):** Code changes are made according to the plan and any creative design decisions.
 6.  **Reflection and Archiving (REFLECT+ARCHIVE Mode):** After implementation, the work is reviewed, lessons are learned, and all relevant documentation is archived. The Memory Bank is updated to reflect the completed task.
 
+## Inspiration and Acknowledgments
+
+This project was inspired by the excellent work done by the [cursor-memory-bank](https://github.com/vanzan01/cursor-memory-bank) project. We were impressed by their innovative approach to structured AI-assisted development workflows and their comprehensive memory bank system for the Cursor IDE.
+
+graph TD
+    Main["Memory Bank System"] --> Modes["Custom Modes"]
+    Main --> Rules["Hierarchical Rule Loading"]
+    Main --> Visual["Visual Process Maps"]
+    Main --> Token["Token Optimization"]
+    
+    Modes --> VAN["VAN: Initialization"]
+    Modes --> PLAN["PLAN: Task Planning"]
+    Modes --> CREATIVE["CREATIVE: Design"]
+    Modes --> IMPLEMENT["IMPLEMENT: Building"]
+    Modes --> REFLECT["REFLECT: Review"]
+    Modes --> ARCHIVE["ARCHIVE: Documentation"]
+    
+    style Main fill:#4da6ff,stroke:#0066cc,color:white
+    style Modes fill:#f8d486,stroke:#e8b84d,color:black
+    style Rules fill:#80ffaa,stroke:#4dbb5f,color:black
+    style Visual fill:#d9b3ff,stroke:#b366ff,color:black
+    style Token fill:#ff9980,stroke:#ff5533,color:black
+
+**What we learned from cursor-memory-bank:**
+- The power of hierarchical rule loading and token optimization
+- Mode-specific workflows with visual process maps  
+- Contextual memory management across development phases
+- The value of specialized modes for different development stages
+
+**Our adaptation for GitHub Copilot:**
+While cursor-memory-bank focuses on Cursor IDE's custom modes, we recognized that many developers use GitHub Copilot and wanted to bring similar structured workflows to that ecosystem. This CLI tool makes it easy to install and manage Memory Bank templates specifically designed for GitHub Copilot's chat modes.
+
+**Special thanks to:**
+- [@vanzan01](https://github.com/vanzan01) and all contributors to the cursor-memory-bank project
+- The innovative thinking behind token-optimized architecture and progressive documentation
+- The comprehensive approach to development workflow management
+
+We encourage anyone interested in structured AI development workflows to check out the original [cursor-memory-bank project](https://github.com/vanzan01/cursor-memory-bank) - it's a fantastic resource that has influenced our approach significantly.
+
 ## Installation
 
 ### For Users
@@ -43,21 +79,21 @@ Install via your preferred package manager:
 
 ```bash
 # Homebrew (macOS/Linux)
-brew install drewpayment/tap/gh-memory-bank
+brew install your-username/tap/gh-memory-bank
 
 # Chocolatey (Windows)
 choco install gh-memory-bank
 
 # Direct download from GitHub Releases
 # Download the appropriate binary for your platform from:
-# https://github.com/drewpayment/gh-memory-bank/releases
+# https://github.com/your-username/gh-memory-bank/releases
 ```
 
 ### Manual Installation
 
 ```bash
 # Install directly with Go
-go install github.com/drewpayment/gh-memory-bank@latest
+go install github.com/your-username/gh-memory-bank@latest
 ```
 
 ## Usage
@@ -85,11 +121,11 @@ The tool will:
 
 ```bash
 # Clone the repository
-git clone https://github.com/drewpayment/gh-memory-bank.git
+git clone https://github.com/your-username/gh-memory-bank.git
 cd gh-memory-bank
 
 # Initialize Go module (if not already done)
-go mod init github.com/drewpayment/gh-memory-bank
+go mod init github.com/your-username/gh-memory-bank
 
 # Install dependencies (if any are added later)
 go mod tidy
@@ -240,7 +276,7 @@ git push origin v1.0.0
 
 ## License
 
-[Add your license here]
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
