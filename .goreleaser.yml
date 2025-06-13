@@ -88,6 +88,7 @@ homebrew_casks:
     repository:
       owner: drewpayment
       name: homebrew-tap
+      token: "{{ .Env.HOMEBREW_TAP_TOKEN }}"
     directory: Casks
     description: "CLI tool to install GitHub Copilot Memory Bank templates"
     homepage: https://github.com/drewpayment/gh-memory-bank
