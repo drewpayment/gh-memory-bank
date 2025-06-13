@@ -36,6 +36,7 @@ The system is intended to be used with GitHub Copilot Chat's custom modes. The u
 
 This project was inspired by the excellent work done by the [cursor-memory-bank](https://github.com/vanzan01/cursor-memory-bank) project. We were impressed by their innovative approach to structured AI-assisted development workflows and their comprehensive memory bank system for the Cursor IDE.
 
+```mermaid
 graph TD
     Main["Memory Bank System"] --> Modes["Custom Modes"]
     Main --> Rules["Hierarchical Rule Loading"]
@@ -54,6 +55,7 @@ graph TD
     style Rules fill:#80ffaa,stroke:#4dbb5f,color:black
     style Visual fill:#d9b3ff,stroke:#b366ff,color:black
     style Token fill:#ff9980,stroke:#ff5533,color:black
+```
 
 **What we learned from cursor-memory-bank:**
 - The power of hierarchical rule loading and token optimization
