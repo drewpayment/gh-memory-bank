@@ -112,6 +112,11 @@ The tool will:
 3. Install or merge a `.gitignore` file in your project root
 4. Warn you if you're not in a git repository (but allow you to continue)
 
+## Using the Memory Bank
+
+[![AI Jason - Cursor Memory Bank](/assets/ai_jason.png)](https://youtu.be/dF4uCZAY1tk?si=MJ_Z6IsrQ9TtNW3d&t=628)
+Huge thanks to [AI Jason](https://www.youtube.com/@AIJasonZ) for the excellent video walkthrough of the Memory Bank system. In his video, he demonstrates how to use the Memory Bank with GitHub Copilot, showcasing the various modes and their functionalities.
+
 ## Development
 
 ### Prerequisites
