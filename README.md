@@ -7,6 +7,7 @@ This repository contains a tool to help users implement a memory bank system for
 The Memory Bank system utilizes a structured approach to manage tasks, context, and progress throughout a development workflow. It relies on a set of predefined "chat modes," each tailored for a specific stage:
 
 *   **VAN Mode (Initialization):** Sets up the initial context, checks the memory bank status, and determines the task's complexity level.
+*   **PM Mode (Product Requirements):** Guides the creation of detailed Product Requirements Documents (PRDs) through structured clarifying questions and comprehensive documentation.
 *   **PLAN Mode (Task Planning):** Creates a detailed plan for task execution based on the complexity.
 *   **CREATIVE Mode (Design Decisions):** Facilitates detailed design and architecture work for components flagged during planning.
 *   **IMPLEMENT Mode (Code Implementation):** Guides the building of planned changes, following the implementation plan and creative phase decisions.
@@ -25,10 +26,11 @@ The Memory Bank system utilizes a structured approach to manage tasks, context, 
 The system is intended to be used with GitHub Copilot Chat's custom modes. The user interacts with the AI, and the AI follows the instructions and workflows defined in the `.chatmode.md` files.
 
 1.  **Initialization (VAN Mode):** A new task begins in VAN mode, where the project brief and task complexity are established.
-2.  **Planning (PLAN Mode):** Based on the task's complexity, a detailed implementation plan is created. Components requiring significant design work are flagged for a "Creative Phase."
-3.  **Creative Design (CREATIVE Mode):** If needed, this mode is used to explore design options (architecture, algorithms, UI/UX) for flagged components.
-4.  **Implementation (IMPLEMENT Mode):** Code changes are made according to the plan and any creative design decisions.
-5.  **Reflection and Archiving (REFLECT+ARCHIVE Mode):** After implementation, the work is reviewed, lessons are learned, and all relevant documentation is archived. The Memory Bank is updated to reflect the completed task.
+2.  **Product Requirements (PM Mode):** When needed, this mode creates comprehensive Product Requirements Documents (PRDs) through structured questioning, ensuring clear feature definition before planning begins.
+3.  **Planning (PLAN Mode):** Based on the task's complexity, a detailed implementation plan is created. Components requiring significant design work are flagged for a "Creative Phase."
+4.  **Creative Design (CREATIVE Mode):** If needed, this mode is used to explore design options (architecture, algorithms, UI/UX) for flagged components.
+5.  **Implementation (IMPLEMENT Mode):** Code changes are made according to the plan and any creative design decisions.
+6.  **Reflection and Archiving (REFLECT+ARCHIVE Mode):** After implementation, the work is reviewed, lessons are learned, and all relevant documentation is archived. The Memory Bank is updated to reflect the completed task.
 
 ## Getting Started
 
@@ -44,6 +46,7 @@ This README is based on the configuration files found in the `.github` directory
 *   `.github/chatmodes/⚒️ IMPLEMENT.chatmode.md`
 *   `.github/chatmodes/🎨 CREATIVE.chatmode.md`
 *   `.github/chatmodes/📋 PLAN.chatmode.md`
-*   `.github/chatmodes/🔍 REFLECT.chatmode.md`
+*   `.github/chatmodes/� PM.chatmode.md`
+*   `.github/chatmodes/�🔍 REFLECT.chatmode.md`
 *   `.github/chatmodes/🔍 VAN.chatmode.md`
 *   `.github/instructions/main.instructions.md`
